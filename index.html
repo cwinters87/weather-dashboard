@@ -13,69 +13,66 @@
 
     <main id="main-container">
         <section id="left-section" class="section">
-            <form id="form" action="action_page.php">
-                <div>
-                    <label>Search for a City:</label>
+            <form id="form">
+                <div class="search-div">
+                    <label id="search-label">Search for a City:</label>
                 </div>
-                <div>
-                    <input type="text" id="city-input" name="city" placeholder="Austin">
+                <div class="search-div">
+                    <input type="text" id="city-input" placeholder="Austin">
                 </div>
-                <div>
-                    <input type="submit" value="Submit">
+                <div class="search-div">
+                    <input type="submit" id="city-btn" value="Submit">
                 </div>
-            </form>
-
-            <div>
-                <ul>
-                    <li>Austin</li>
-                    <li>Denver</li>
-                    <li>Amarillo</li>
-                    <li>Dallas</li>
-                </ul>
-            </div>
+            </form>            
+            <ul id="city-list">
+                <li class="saved-city">Austin</li>
+                <li class="saved-city">Denver</li>
+                <li class="saved-city">Amarillo</li>
+                <li class="saved-city">Dallas</li>
+            </ul>            
         </section>
 
         <section id="right-section" class="section">
-            <div>
-                <h2>Austin Date 04/20/2021</h2>
-                <p>Temp:</p>
-                <p>Wind:</p>
-                <p>Humidity:</p>
-                <p>UV Index:</p>
+            <div id="current-city-div">
+                <h2 id="current-city">Austin<span id="current-date">Date</span></h2>
+                <p>Temp: </p><span id="current-temp"></span>
+                <p>Wind: </p><span id="current-wind"></span>
+                <p>Humidity: </p><span id="current-humidity"></span>
+                <p>UV Index: </p><span id="current-uv"></span>
             </div>
             <div>
-                <h3>5 Day Forcast:</h3>
+                <h3 id="forcast-label">5 Day Forcast:</h3>
             </div>
             <div id="five-day-forcast">
-                <div>
+                <div id="day-one" class="forcast-div">
                     <h4>Date</h4>
                     <p>icon</p>
                     <p>Temp:</p>
                     <p>Wind:</p>
                     <p>Humidity:</p>
                 </div>
-                <div>
+                <div id="day-two" class="forcast-div">
                     <h4>Date</h4>
                     <p>icon</p>
                     <p>Temp:</p>
                     <p>Wind:</p>
                     <p>Humidity:</p>
                 </div>
-                <div>
+                <div id="day-three" class="forcast-div">
                     <h4>Date</h4>
                     <p>icon</p>
                     <p>Temp:</p>
                     <p>Wind:</p>
                     <p>Humidity:</p>
                 </div>
-                <div>
+                <div id="day-four" class="forcast-div">
                     <h4>Date</h4>
                     <p>icon</p>
                     <p>Temp:</p>
                     <p>Wind:</p>
                     <p>Humidity:</p>
                 </div>
-                <div>
+                <div id="day-five" class="forcast-div">
                     <h4>Date</h4>
                     <p>icon</p>
                     <p>Temp:</p>

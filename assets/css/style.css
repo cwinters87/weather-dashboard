@@ -14,3 +14,7 @@ header h1 {
 #five-day-forcast {
     display: flex;
 }
+
+#search-label {
+    color: yellow;
+}
