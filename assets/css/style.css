@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header h1 {
+    color: blue;
+}
+
+#main-container {
+    display: flex;
+}
+
+#five-day-forcast {
+    display: flex;
+}
