@@ -13,7 +13,20 @@ searchBtn.addEventListener('click', e=> {
         return response.json()
     })
     .then(function(response){
+        let currentTemp = Math.floor(response.list[0].main.temp).toString()
+        let currentHumidity = Math.floor(response.list[0].main.humidity).toString()
+        let currentWind = Math.floor(response.list[0].wind.speed).toString()
+        let responseIcon = response.list[0].weather[0].icon
+        let cityName = response.list[0].name
+
+
         console.log(response)
+        
+        console.log(cityName)        
+        console.log(currentTemp)
+        console.log(currentHumidity)
+        console.log(currentWind)
+        console.log(responseIcon)
     })
 
     console.log(cityName)
