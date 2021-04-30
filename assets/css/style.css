@@ -136,6 +136,7 @@
     background-color: midnightblue;
     padding: 10px 70px 20px 5px;
     border-style: solid;
+    border-radius: 5px;
 }
 
 .forcast-date {
