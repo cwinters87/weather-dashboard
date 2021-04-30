@@ -19,9 +19,22 @@ searchBtn.addEventListener('click', e=> {
         let responseIcon = response.list[0].weather[0].icon
         let cityName = response.list[0].name
 
+        
+        var currentCityEl = document.querySelector('#current-city')
+        currentCityEl.innerHTML = ''
+        currentCityEl.innerHTML = cityName + ' '
+
+        // Place icon in element
+        var iconContainerEl = document.querySelector('#current-icon')
+        iconContainerEl.innerHTML = ''
+        var iconImg = document.createElement('img')
+        iconImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + responseIcon + '@2x.png')
+        iconContainerEl.appendChild(iconImg)
+
+
 
         console.log(response)
-        
+
         console.log(cityName)        
         console.log(currentTemp)
         console.log(currentHumidity)

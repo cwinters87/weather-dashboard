@@ -114,6 +114,12 @@
     margin: 5px 5px 15px 5px;
 }
 
+
+#current-icon img {
+    height: 50px;
+    width: 50px;
+}
+
 #forcast-label {
     font-size: 30px;
     font-weight: bold;
@@ -138,9 +144,9 @@
     margin-bottom: 15px;
 }
 
-.forcast-icon {
-    font-size: 25px;
-    margin-bottom: 20px;
+.forcast-icon img {
+    height: 40px;
+    
 }
 
 .forcast-text {
