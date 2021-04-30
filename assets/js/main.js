@@ -19,17 +19,33 @@ searchBtn.addEventListener('click', e=> {
         let responseIcon = response.list[0].weather[0].icon
         let cityName = response.list[0].name
 
-        
+        // Render City Name
         var currentCityEl = document.querySelector('#current-city')
         currentCityEl.innerHTML = ''
         currentCityEl.innerHTML = cityName + ' '
 
-        // Place icon in element
+        // Render Icon
         var iconContainerEl = document.querySelector('#current-icon')
         iconContainerEl.innerHTML = ''
         var iconImg = document.createElement('img')
         iconImg.setAttribute('src', 'http://openweathermap.org/img/wn/' + responseIcon + '@2x.png')
         iconContainerEl.appendChild(iconImg)
+
+        // Render Tempature
+        var currentTempEl = document.querySelector('#current-temp')
+        currentTempEl.innerHTML = ''
+        currentTempEl.innerHTML = currentTemp
+
+        // Render Wind Speed
+        var currentWindEl = document.querySelector('#current-wind')
+        currentWindEl.innerHTML = ''
+        currentWindEl.innerHTML = currentWind
+
+        // Render Humidity
+        var currentHumidityEl = document.querySelector('#current-humidity')
+        currentHumidityEl.innerHTML = ''
+        currentHumidityEl.innerHTML = currentHumidity
+
 
 
 
