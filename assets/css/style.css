@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+    width: 100%;
 }
 
 #main-container {
@@ -62,7 +63,7 @@
   }
 
 #city-btn:active {
-    background-color: blue;
+    background-color: darkblue;
     transform: translateY(2px)
 }
 
@@ -89,7 +90,7 @@
 }
 
 .saved-city:active {
-    background-color: blue;
+    background-color: darkblue;
     transform: translateY(2px)
 }
 
@@ -114,7 +115,7 @@
 }
 
 #forcast-label {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     margin: 10px 0px;
 }
@@ -126,11 +127,23 @@
 
 .forcast-div {
     color: white;
-    background-color: dimgrey;
-    padding: 15px;
+    background-color: midnightblue;
+    padding: 10px 70px 20px 5px;
     border-style: solid;
 }
 
-#forcast-temp1 {
-    color: yellow;
+.forcast-date {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.forcast-icon {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.forcast-text {
+    font-size: 20px;
+    margin-bottom: 15px;
 }
