@@ -244,12 +244,6 @@ function fetchWeatherApi(){
         dayFiveHumidityEl.innerHTML = dayFiveHumidity
     })
 
-    //var cityNameEl = document.createElement('BUTTON')
-        //cityNameEl.setAttribute('type', 'button')
-        //cityNameEl.className ="saved-city"
-        //cityNameEl.innerHTML = cityName
-        //cityListEl.insertBefore(cityNameEl, cityListEl.firstElementChild)
-
     // Set city to localstorage and display them to page with a function
     localStorage.setItem(cityName, cityName)
     $('.saved-city').remove()
@@ -261,12 +255,8 @@ function createClickHandler(savedCityName){
     event.preventDefault()
     cityNameInput.value = savedCityName
     cityName = cityNameInput.value.trim()
-    //console.log(cityNameInput.value)
     fetchWeatherApi()
-            //event.preventDefault()
-            //cityNameInput.value = $(this).innerHTML
-            //fetchWeatherApi()
-            //console.log(cityNameInput.value)
+            
 }
 // Display localstorage cities to page
 function displaySavedCities (){
