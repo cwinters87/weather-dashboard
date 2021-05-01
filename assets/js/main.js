@@ -237,11 +237,16 @@ searchBtn.addEventListener('click', e=> {
         dayFiveHumidityEl.innerHTML = dayFiveHumidity
     })
 
+    var cityNameEl = document.createElement('BUTTON')
+        cityNameEl.setAttribute('type', 'button')
+        cityNameEl.className ="saved-city"
+        cityNameEl.innerHTML = cityName
+        cityListEl.insertBefore(cityNameEl, cityListEl.firstElementChild)
     
     localStorage.setItem(cityName, cityName)
-    displaySavedCities()
 
 })
+
 
 function displaySavedCities (){
     for(var i =0; i < localStorage.length; i++){
