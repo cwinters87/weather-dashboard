@@ -1,7 +1,7 @@
 //  Global Variables
-const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q='
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='
 const apiUrlTwo = '&units=imperial&appid='
-const apiForecast = 'http://api.openweathermap.org/data/2.5/forecast?q='
+const apiForecast = 'https://api.openweathermap.org/data/2.5/forecast?q='
 const apiForecastTwo = '&units=imperial&appid='
 const apiKey = 'cd1c8c05c258a7ae519d0d8a973b7500'
 const searchBtn = document.querySelector('#city-btn')
