@@ -6,8 +6,9 @@ const apiForecastTwo = '&units=imperial&appid='
 const apiKey = 'cd1c8c05c258a7ae519d0d8a973b7500'
 const searchBtn = document.querySelector('#city-btn')
 const cityListEl = document.querySelector('#city-list')
-let counter = 0
 
+let cityNameInput = document.querySelector('#city-input')
+let cityName = cityNameInput.value.trim()
 
 // Time Stamps
 var date = new Date()
@@ -33,8 +34,14 @@ var formattedDayFive = (dayFive.getMonth()+1) + '/' + dayFive.getDate() + '/' + 
 // Search Button
 searchBtn.addEventListener('click', e=> {
     event.preventDefault()
-    let newCount = counter + 1 
-    var cityName = document.querySelector('#city-input').value.trim()
+    cityName = cityNameInput.value.trim()
+    fetchWeatherApi() 
+})
+
+// Fetch Weather Funtion
+function fetchWeatherApi(){
+    //let cityName = cityNameInput.value.trim()
+    // Fetch Current Weather
     fetch(apiUrl + cityName + apiUrlTwo + apiKey)
     .then(function(response){
         return response.json()
@@ -237,23 +244,40 @@ searchBtn.addEventListener('click', e=> {
         dayFiveHumidityEl.innerHTML = dayFiveHumidity
     })
 
-    var cityNameEl = document.createElement('BUTTON')
-        cityNameEl.setAttribute('type', 'button')
-        cityNameEl.className ="saved-city"
-        cityNameEl.innerHTML = cityName
-        cityListEl.insertBefore(cityNameEl, cityListEl.firstElementChild)
-    
+    //var cityNameEl = document.createElement('BUTTON')
+        //cityNameEl.setAttribute('type', 'button')
+        //cityNameEl.className ="saved-city"
+        //cityNameEl.innerHTML = cityName
+        //cityListEl.insertBefore(cityNameEl, cityListEl.firstElementChild)
+
+    // Set city to localstorage and display them to page with a function
     localStorage.setItem(cityName, cityName)
+    $('.saved-city').remove()
+    displaySavedCities()
+}
 
-})
-
-
+function createClickHandler(n){
+    event.preventDefault()
+    cityNameInput.value = n
+    cityName = cityNameInput.value.trim()
+    //console.log(cityNameInput.value)
+    fetchWeatherApi()
+            //event.preventDefault()
+            //cityNameInput.value = $(this).innerHTML
+            //fetchWeatherApi()
+            //console.log(cityNameInput.value)
+}
+// Display localstorage cities to page
 function displaySavedCities (){
     for(var i =0; i < localStorage.length; i++){
-        console.log(localStorage.getItem(localStorage.key(i)));
         var cityNameEl = document.createElement('BUTTON')
         cityNameEl.setAttribute('type', 'button')
         cityNameEl.className ="saved-city"
+        cityNameEl.id = localStorage.getItem(localStorage.key(i))        
+        cityNameEl.value = localStorage.getItem(localStorage.key(i))
+        cityNameEl.onclick = function() {
+            createClickHandler(this.value)            
+        };
         cityNameEl.innerHTML = localStorage.getItem(localStorage.key(i))
         cityListEl.appendChild(cityNameEl)    
       }
