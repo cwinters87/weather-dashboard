@@ -5,6 +5,9 @@ const apiForecast = 'http://api.openweathermap.org/data/2.5/forecast?q='
 const apiForecastTwo = '&units=imperial&appid='
 const apiKey = 'cd1c8c05c258a7ae519d0d8a973b7500'
 const searchBtn = document.querySelector('#city-btn')
+const cityListEl = document.querySelector('#city-list')
+let counter = 0
+
 
 // Time Stamps
 var date = new Date()
@@ -30,7 +33,8 @@ var formattedDayFive = (dayFive.getMonth()+1) + '/' + dayFive.getDate() + '/' + 
 // Search Button
 searchBtn.addEventListener('click', e=> {
     event.preventDefault()
-    var cityName = document.querySelector('#city-input').value.trim().toLowerCase()
+    let newCount = counter + 1 
+    var cityName = document.querySelector('#city-input').value.trim()
     fetch(apiUrl + cityName + apiUrlTwo + apiKey)
     .then(function(response){
         return response.json()
@@ -231,15 +235,23 @@ searchBtn.addEventListener('click', e=> {
         var dayFiveHumidityEl = document.querySelector('#forcast-humidity5')
         dayFiveHumidityEl.innerHTML = ''
         dayFiveHumidityEl.innerHTML = dayFiveHumidity
-
-
-
-
-
-        
-
-
-
     })
 
+    
+    localStorage.setItem(cityName, cityName)
+    displaySavedCities()
+
 })
+
+function displaySavedCities (){
+    for(var i =0; i < localStorage.length; i++){
+        console.log(localStorage.getItem(localStorage.key(i)));
+        var cityNameEl = document.createElement('BUTTON')
+        cityNameEl.setAttribute('type', 'button')
+        cityNameEl.className ="saved-city"
+        cityNameEl.innerHTML = localStorage.getItem(localStorage.key(i))
+        cityListEl.appendChild(cityNameEl)    
+      }
+}
+
+displaySavedCities()
