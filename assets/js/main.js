@@ -256,9 +256,10 @@ function fetchWeatherApi(){
     displaySavedCities()
 }
 
-function createClickHandler(n){
+// function to fetch weather with button name(value)
+function createClickHandler(savedCityName){
     event.preventDefault()
-    cityNameInput.value = n
+    cityNameInput.value = savedCityName
     cityName = cityNameInput.value.trim()
     //console.log(cityNameInput.value)
     fetchWeatherApi()
