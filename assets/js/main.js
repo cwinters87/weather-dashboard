@@ -6,12 +6,12 @@ const apiForecastTwo = '&units=imperial&appid='
 const apiKey = 'cd1c8c05c258a7ae519d0d8a973b7500'
 const searchBtn = document.querySelector('#city-btn')
 const cityListEl = document.querySelector('#city-list')
-
 let cityNameInput = document.querySelector('#city-input')
 let cityName = cityNameInput.value.trim()
 
 // Time Stamps
 var date = new Date()
+// get all the days
 var dayOne = new Date(date)
 dayOne.setDate(dayOne.getDate() + 1)
 var dayTwo = new Date(date)
@@ -40,13 +40,14 @@ searchBtn.addEventListener('click', e=> {
 
 // Fetch Weather Funtion
 function fetchWeatherApi(){
-    //let cityName = cityNameInput.value.trim()
+
     // Fetch Current Weather
     fetch(apiUrl + cityName + apiUrlTwo + apiKey)
     .then(function(response){
         return response.json()
     })
     .then(function(response){
+
         // Make Variables from the response
         let currentTemp = Math.floor(response.main.temp).toString()
         let currentHumidity = Math.floor(response.main.humidity).toString()
@@ -258,7 +259,7 @@ function createClickHandler(savedCityName){
     fetchWeatherApi()
             
 }
-// Display localstorage cities to page
+// Display localstorage cities to page and make them searchable buttons
 function displaySavedCities (){
     for(var i =0; i < localStorage.length; i++){
         var cityNameEl = document.createElement('BUTTON')
@@ -273,5 +274,4 @@ function displaySavedCities (){
         cityListEl.appendChild(cityNameEl)    
       }
 }
-
 displaySavedCities()
